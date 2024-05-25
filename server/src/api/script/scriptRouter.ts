@@ -28,7 +28,7 @@ export const scriptRouter: Router = (() => {
     const dataId = document.currentScript.getAttribute('data-id');
 
     //todo: update this url to the correct endpoint
-    const url = \`http://localhost:3000/api/getDetails/\${dataId}\`;
+    const url = \`http://localhost:3000/users/get-script-data/\${dataId}\`;
 
 
     post(url,{id:dataId}).then(data => {

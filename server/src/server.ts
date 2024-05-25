@@ -5,6 +5,7 @@ import rateLimiter from './middleware/rateLimit';
 import session from 'express-session';
 import { firebaseAuth } from './middleware/firebase';
 import { scriptRouter } from './api/script/scriptRouter';
+import { userRouter } from './api/user/userRouter';
 
 const app:Express = express();
 
@@ -30,5 +31,6 @@ app.use(rateLimiter);
 app.use(firebaseAuth);
 
 app.use('/script.js',scriptRouter);
+app.use('/users',userRouter);
 
 export {app}

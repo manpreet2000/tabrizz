@@ -1,7 +1,7 @@
 import { DecodedIdToken, getAuth } from 'firebase-admin/auth';
 import {  initializeApp, getApps, cert } from 'firebase-admin/app';
 import { RequestHandler } from 'express';
-import { Request } from "express"
+import { IGetUserAuthInfoRequest } from '@/utils/interfaces';
 
 
 const serviceAccount = require('../../serviceAccountKey.json');
@@ -12,9 +12,7 @@ if (getApps().length === 0) {
     credential: cert(serviceAccount),
   });
 }
-export interface IGetUserAuthInfoRequest extends Request {
-  user: DecodedIdToken 
-}
+
 declare module 'express-session' {
   interface SessionData {
     user?: {
@@ -28,14 +26,10 @@ const auth = getAuth();
 // Add the correct type for the req parameter
 export const firebaseAuth: RequestHandler = async (req, res, next) => {
     try{
-       
         const skipAuthRoutes = ['/script.js','/api/getDetails'];
-        const skipAuthParams = [
-            /^\/api\/getDetails\/\d+$/ 
-          ];
           if (
             skipAuthRoutes.includes(req.path) ||
-            skipAuthParams.some(regex => regex.test(req.path)) // Test if the path matches any of the regex patterns
+            req.path.startsWith('/users/get-script-data')
           ){
             next();
             return;

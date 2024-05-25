@@ -2,13 +2,13 @@ import { env } from "./config";
 import { StatusCodes } from 'http-status-codes';
 import { app } from "./server";
 
-app.get('/api/getDetails/:id', (req, res) => {
-    const id = req.params.id;
-    console.log({id});
-    const listOfEmojis=['🥳','🎉','🥂','🍾'];
-    const intervalTime = 2;
-    return res.status(StatusCodes.ACCEPTED).json({listOfEmojis,intervalTime});
-});
+// app.get('/api/getDetails/:id', (req, res) => {
+//     const id = req.params.id;
+//     console.log({id});
+//     const listOfEmojis=['🥳','🎉','🥂','🍾'];
+//     const intervalTime = 2;
+//     return res.status(StatusCodes.ACCEPTED).json({listOfEmojis,intervalTime});
+// });
 
 
 // app.get('/script.js', (req, res) => {
