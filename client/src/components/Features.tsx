@@ -14,7 +14,7 @@ export default function Features() {
         <Fade direction="left" triggerOnce>
         <div className="flex flex-col gap-12 pt-10 lg:pt-0 items-center justify-center w-full h-full mt-[15%]" id="features">
             <h1 className="text-6xl font-bold pb-5 hover:text-yellow-500">Features</h1>
-            <div className="grid grid-flow-row grid-cols-2 pl-[10%] pr-[10%] w-full pb-10">
+            <div className="grid lg:grid-flow-row lg:grid-cols-2 pl-[10%] pr-[10%] w-full pb-10">
                 <Feature title="Free to use" description="No payment required 💸❌" dir="left"/>
                 <div className="flex justify-end items-end">
                 <Feature title="Open source code" description="Community helps 😎" dir="right"/>

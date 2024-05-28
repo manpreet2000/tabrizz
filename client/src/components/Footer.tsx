@@ -14,7 +14,7 @@ export default function Footer() {
         //     {/* <p>&copy; 2021 All rights reserved</p> */}
         // </footer>
         <Fade direction="up" triggerOnce>
-            <div className='mx-auto max-w-7xl px-6 lg:px-8 '>
+            <div className='mx-auto max-w-7xl px-6 lg:px-8 pt-20 lg:pt-0'>
         <footer
           aria-labelledby='footer-heading'
           className='relative border-t border-gray-900/10 dark:border-gray-200/10 py-10 sm:mt-32'
