@@ -37,7 +37,7 @@ export const userServices = {
         console.log('No such document!');
         return {dataFound:false}
       } else {
-        console.log('Document data:', doc.data());
+        // console.log('Document data:', doc.data());
         return doc.data();
       }
     } catch (e) {

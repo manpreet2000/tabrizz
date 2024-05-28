@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { userServices } from './userService';
 import { StatusCodes } from 'http-status-codes';
 import { IGetUserAuthInfoRequest } from '@/utils/interfaces';
+import { env } from '../../config';
 
 export const userRouter: Router = (() => {
   const router = Router();
@@ -25,7 +26,12 @@ export const userRouter: Router = (() => {
       console.log({ emojis, intervalTime, userId: user.uid });
 
       await userServices.addUserData({ emojis, intervalTime, userId: user.uid, email: user.email });
-      res.status(StatusCodes.OK).send('Data added successfully');
+      console.log(env.NODE_ENV);
+      
+      const url = (env.NODE_ENV === 'development' || env.NODE_ENV === 'test') ? 'http://localhost:3000/script.js' : 'https://yourdomain.com/script.js'; //todo: update domain
+      const script = `<script defer src=${url} data-id=${user.uid}></script>`;
+  
+      res.status(StatusCodes.OK).send(script);
       // Your code here...
     } catch (e) {
       res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Internal Server Error');
@@ -59,18 +65,18 @@ export const userRouter: Router = (() => {
 
   router.get('/get-script-data/:id', async (req, res) => {
     try {
-      console.log(`Inside get-script route`);
+      // console.log(`Inside get-script route`);
 
       const schema = z.string();
       // Validate the request params
       const id = schema.parse(req.params.id);
 
-      console.log(`params: ${JSON.stringify(req.params)}`);
+      // console.log(`params: ${JSON.stringify(req.params)}`);
 
       const data = await userServices.getUserData(id);
-      console.log(`Data: ${JSON.stringify(data)}`);
+      // console.log(`Data: ${JSON.stringify(data)}`);
 
-      res.status(StatusCodes.OK).json({emojis:data?.emojis,intervalTime:data?.intervalTime});
+      res.status(StatusCodes.OK).json({listOfEmojis:data?.emojis,intervalTime:data?.intervalTime});
     } catch (e) {
       res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Internal Server Error');
     }

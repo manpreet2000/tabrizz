@@ -20,7 +20,9 @@ app.use(
 app.set('trust proxy', true); // Trust all proxies
 
 app.use(cors()); 
-app.use(helmet());
+app.use(helmet(
+  {crossOriginResourcePolicy: false,}
+));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
