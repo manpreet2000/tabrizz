@@ -24,10 +24,11 @@ export default function Dashboard() {
   } = useApi({ url: `${backendUrl}/users/add-data` });
 
   useEffect(() => {
+    
     if (!isLoading && !user) {
       location("/login");
     }
-  }, [user]);
+  }, [user,isLoading]);
 
   const generateScript = async () => {
     if (emojiState.length === 0) {
@@ -48,7 +49,7 @@ export default function Dashboard() {
       setTimeInterval(1);
       setShowGenerateScriptModal(false);
       setCopy(false);
-    }, 1000); // Reset after 1.5 seconds
+    }, 1000); 
   };
 
   useEffect(() => {

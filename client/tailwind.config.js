@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#02030c',
-        'secondary': '#171717'
+        'secondary': '#171717',
+        'navbar':'rgb(27 27 27 / 26%)',
       },
       fontFamily:{
         'sans': ['Lilita One', 'sans-serif'],
