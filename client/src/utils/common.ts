@@ -5,4 +5,4 @@ import { twMerge } from 'tailwind-merge';
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
-export const backendUrl = 'http://localhost:3000';
+export const backendUrl = 'https://backend.tabrizz.com';

@@ -28,7 +28,7 @@ export const userRouter: Router = (() => {
       await userServices.addUserData({ emojis, intervalTime, userId: user.uid, email: user.email });
       console.log(env.NODE_ENV);
       
-      const url = (env.NODE_ENV === 'development' || env.NODE_ENV === 'test') ? 'http://localhost:3000/script.js' : 'https://yourdomain.com/script.js'; //todo: update domain
+      const url = (env.NODE_ENV === 'development' || env.NODE_ENV === 'test') ? 'http://localhost:3000/script.js' : 'https://backend.tabrizz.com/script.js'; //todo: update domain
       const script = `<script defer src=${url} data-id=${user.uid}></script>`;
   
       res.status(StatusCodes.OK).send(script);

@@ -39,9 +39,9 @@ export const scriptRouter: Router = (() => {
     //todo: update this url to the correct endpoint
     const url = window?.location?.hostname === "localhost"
         ? \`http://localhost:3000/users/get-script-data/\${dataId}\`
-        : \`https://www.tabrizz.com/users/get-script-data/\${dataId}\`;
+        : \`https://backend.tabrizz.com/users/get-script-data/\${dataId}\`;
 
-    // const url = \`http://localhost:3000/users/get-script-data/\${dataId}\`;
+    // const url = \`https://backend.tabrizz.com/users/get-script-data/\${dataId}\`;
 
     get(url,{id:dataId}).then(data => {
         const {listOfEmojis,intervalTime:changeIconSeconds,localStorageData} = data;
@@ -117,7 +117,7 @@ export const scriptRouter: Router = (() => {
       return res.status(StatusCodes.UNAUTHORIZED).send('User not found');
     }
     const dataId = user.uid;
-    const url = env.NODE_ENV === 'test' ? 'http://localhost:3000/script.js' : 'https://yourdomain.com/script.js'; //todo: update domain
+    const url = env.NODE_ENV === 'test' ? 'http://localhost:3000/script.js' : 'https://backend.tabrizz.com/script.js'; //todo: update domain
     const script = `<script defer src=${url} data-id=${dataId}></script>`;
 
     res.status(StatusCodes.OK).send(script);
