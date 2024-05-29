@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TabRizz",
+  "name": "TabRizz: Rizzup your Tab with Emojis",
   "icons": [
     {
       "src": "favicon.ico",
