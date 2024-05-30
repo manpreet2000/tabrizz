@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install app dependencies
-RUN apt-get update && apt-get install -y google-cloud-sdk
+
 RUN apt-get update && \
     apt-get install -y curl gnupg && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
