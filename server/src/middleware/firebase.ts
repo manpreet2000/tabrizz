@@ -1,15 +1,15 @@
 import { DecodedIdToken, getAuth } from 'firebase-admin/auth';
-import {  initializeApp, getApps, cert } from 'firebase-admin/app';
+import {  initializeApp, getApps, cert, applicationDefault } from 'firebase-admin/app';
 import { RequestHandler } from 'express';
 import { IGetUserAuthInfoRequest } from '@/utils/interfaces';
+import { env } from '../config';
 
 
-const serviceAccount = require('../../serviceAccountKey.json');
 
 // Initialize Firebase Admin SDK if not already initialized
 if (getApps().length === 0) {
   initializeApp({
-    credential: cert(serviceAccount),
+    credential: applicationDefault()
   });
 }
 

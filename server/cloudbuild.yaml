@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'asia-south2-docker.pkg.dev/$PROJECT_ID/tabrizz-server/tabrizz-server', '.']  # Update image path
+  secretEnv: ['GOOGLE_APPLICATION_CREDENTIALS']
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/firebase-service-account-key/versions/latest
+    env: 'GOOGLE_APPLICATION_CREDENTIALS'
+
+images:
+- 'asia-south2-docker.pkg.dev/$PROJECT_ID/tabrizz-server/tabrizz-server' # Update image path
