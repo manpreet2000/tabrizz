@@ -69,22 +69,22 @@ export default function Dashboard() {
         <span className="hover:text-yellow-500">Tab.</span>
       </div>
       {showGenerateScriptModal && addDataResponse && (
-        <div className="lg:min-w-[50%] lg:min-h-[50%] lg:top-[30%] lg:left-[15%] top-[100%] w-[100%] lg:w-auto z-30 items-center absolute bg-gray-700 rounded-3xl shadow-2xl ">
+        <div className="lg:min-w-[50%] lg:min-h-[50%] lg:top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 top-[100%] w-[100%] lg:w-auto z-30 items-center absolute bg-gray-700 rounded-3xl shadow-2xl ">
           <div className="p-4 flex flex-col gap-20 justify-between">
-            <div className="flex justify-between">
+            <div className="flex lg:justify-between">
             <div className="text-xl lg:text-3xl">Script Generated Successfully</div>
             <button className="p-2" onClick={()=>setShowGenerateScriptModal(false)}>❌</button>
             </div>
             <div className="text-lg lg:text-xl">
               Copy the below script and paste it in your website. If you already generated a script, the previous script will be replaced.
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-between">
               <CopyToClipboard text={addDataResponse} onCopy={handleCopy}>
-                <button className=" border p-5 rounded-3xl pt-5 bg-gray-700 hover:bg-primary hover:text-yellow-500">
+                <button className=" border p-5 rounded-3xl pt-5 lg:w-[50%] bg-gray-700 hover:bg-primary hover:text-yellow-500">
                   {copy ? "Copied✨" : "Copy Script"}
                 </button>
               </CopyToClipboard>
-              <div className="p-4 bg-primary rounded-lg flex">
+              <div className="p-4 lg:max-w-[70%] bg-primary rounded-lg flex">
                 {addDataResponse}
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Dashboard() {
         <button
           className="text-2xl border p-5 rounded-3xl pt-5 bg-gray-700 hover:bg-primary hover:text-yellow-500"
           onClick={generateScript}
-          disabled={addDataLoading}
+          disabled={addDataLoading || showGenerateScriptModal}
         >
          { addDataLoading ? 'Generating 🔥' : 'Generate Script ✨'}
         </button>

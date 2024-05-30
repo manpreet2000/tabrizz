@@ -23,7 +23,7 @@ export default function Script() {
         </Fade>
         <Fade direction="right" triggerOnce>
           <div className="flex flex-col gap-8 text-white items-center lg:items-end">
-            <h1 className="text-2xl lg:text-4xl hover:text-yellow-500">
+            <h1 className="text-2xl mt-10 lg:mt-0 lg:text-4xl hover:text-yellow-500">
               preferred time
             </h1>
             <p className="text-gray-500 text-sm lg:text-lg">
