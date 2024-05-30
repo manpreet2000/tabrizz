@@ -1,6 +1,8 @@
 {
   "short_name": "TabRizz",
-  "name": "TabRizz: Rizzup your Tab with Emojis",
+  "name": "TabRizz",
+  "description":"Boost your website traffic with Emojis",
+
   "icons": [
     {
       "src": "favicon.ico",
