@@ -22,11 +22,11 @@ export default function Script() {
           </div>
         </Fade>
         <Fade direction="right" triggerOnce>
-          <div className="flex flex-col gap-8 text-white items-center lg:items-start">
+          <div className="flex flex-col gap-8 text-white items-center lg:items-end">
             <h1 className="text-2xl lg:text-4xl hover:text-yellow-500">
               preferred time
             </h1>
-            <p className="text-gray-500 w-[70%] text-sm lg:text-lg">
+            <p className="text-gray-500 text-sm lg:text-lg">
               {/* complete the sentence  */}
               Select the time interval for the emojis to change
             </p>
@@ -53,11 +53,11 @@ export default function Script() {
           </div>
         </Fade>
         <Fade direction="right" triggerOnce>
-          <div className="flex flex-col gap-8 pt-8 lg:pt-0 text-white items-center">
+          <div className="flex flex-col gap-8 pt-8 lg:pt-0 text-white items-center lg:items-end">
             <h1 className="text-2xl lg:text-4xl hover:text-yellow-500">
               Paste it in your website
             </h1>
-            <p className="text-sm lg:text-lg text-gray-500  w-[70%]">
+            <p className="text-sm lg:text-lg text-gray-500 ">
               Use the script for your website. just paste it in HTML file and
               it's done 😎
             </p>

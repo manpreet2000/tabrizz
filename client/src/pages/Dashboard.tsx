@@ -76,7 +76,7 @@ export default function Dashboard() {
             <button className="p-2" onClick={()=>setShowGenerateScriptModal(false)}>❌</button>
             </div>
             <div className="text-xl">
-              Copy the below script and paste it in your website
+              Copy the below script and paste it in your website. If you already generated a script, the previous script will be replaced.
             </div>
             <div className="flex gap-2">
               <CopyToClipboard text={addDataResponse} onCopy={handleCopy}>
