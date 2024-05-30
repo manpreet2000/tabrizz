@@ -63,19 +63,19 @@ export default function Dashboard() {
   }, [addDataLoading, addDataResponse, addDataError]);
 
   return (
-    <div className="bg-primary  text-white ">
-      <div className=" text-center text-6xl min-h-[40%]">
+    <div className="bg-primary  text-white pt-20 lg:pt-0">
+      <div className=" text-center text-xl lg:text-6xl min-h-[40%]">
         <span className="hover:text-yellow-500">Rizz</span> Up Your{" "}
         <span className="hover:text-yellow-500">Tab.</span>
       </div>
       {showGenerateScriptModal && addDataResponse && (
-        <div className="min-w-[50%] min-h-[50%] top-[30%] left-[20%] z-30 items-center absolute bg-gray-700 rounded-3xl shadow-2xl ">
+        <div className="lg:min-w-[50%] lg:min-h-[50%] lg:top-[30%] lg:left-[15%] top-[100%] w-[100%] lg:w-auto z-30 items-center absolute bg-gray-700 rounded-3xl shadow-2xl ">
           <div className="p-4 flex flex-col gap-20 justify-between">
             <div className="flex justify-between">
-            <div className="text-3xl">Script Generated Successfully</div>
+            <div className="text-xl lg:text-3xl">Script Generated Successfully</div>
             <button className="p-2" onClick={()=>setShowGenerateScriptModal(false)}>❌</button>
             </div>
-            <div className="text-xl">
+            <div className="text-lg lg:text-xl">
               Copy the below script and paste it in your website. If you already generated a script, the previous script will be replaced.
             </div>
             <div className="flex gap-2">
@@ -91,7 +91,7 @@ export default function Dashboard() {
         </div>
         </div>
       )}
-      <div className="pt-10 grid items-start grid-cols-3 gap-[10%]">
+      <div className="pt-10 grid items-start lg:grid-cols-3 gap-[10%]">
         <WebsiteTab />
         <EmojiSelector emojiState={emojiState} setEmojiState={setEmojiState} />
         <TimeInterval
@@ -99,7 +99,7 @@ export default function Dashboard() {
           timeInterval={timeInterval}
         />
       </div>
-      <div className="w-full flex justify-center mt-10">
+      <div className="w-full flex justify-center mt-10 pb-20 lg:pb-0">
         <button
           className="text-2xl border p-5 rounded-3xl pt-5 bg-gray-700 hover:bg-primary hover:text-yellow-500"
           onClick={generateScript}

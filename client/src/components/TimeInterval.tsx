@@ -2,7 +2,7 @@
 export default function TimeInterval({setTimeInterval, timeInterval}: {setTimeInterval: React.Dispatch<React.SetStateAction<number>>, timeInterval: number}){
 
   return (
-    <div className="container border border-white p-6 flex flex-col min-h-40">
+    <div className="container border border-white p-6 flex flex-col min-h-40 mt-28 lg:mt-0">
       <span className="text-2xl">Rizz Frequency?</span>
       <div>
         <div className="p-3 pl-0 text-gray-400">
