@@ -23,6 +23,16 @@ export default function Features() {
                 <div className="flex justify-end items-end">
                 <Feature title="So mannyy Emojis" description="👿 🫶 😇 😎 😋 😏 🥺 🔥" dir="right"/>
                 </div>
+                <div className="">
+                <Feature title="*Title animation" description="Change Tab titles with your customized optons" dir="left"/>
+                    <span className="text-yellow-500">Comming Soon</span>
+                </div>
+
+                <div className="flex flex-col justify-end items-end">
+                <Feature title="*Emoji attack" description="🐥 let this duck follow your mouse" dir="right"/>
+                <span className="text-yellow-500">Comming Soon</span>
+                </div>
+                
             </div>
             </div>
             <div className="w-full flex justify-center">

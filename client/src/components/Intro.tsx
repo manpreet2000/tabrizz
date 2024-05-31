@@ -13,6 +13,7 @@ return (
         href="/dashboard"
           className="text-xl border p-5 rounded-3xl bg-gray-700 hover:bg-primary hover:text-yellow-500"
         >Jump In 👻</a>
+       <a href="https://www.producthunt.com/posts/tabrizz?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tabrizz" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=460513&theme=dark" alt="TabRizz - Bring&#0032;back&#0032;lost&#0032;users&#0032;on&#0032;your&#0032;website&#0032;with&#0032;Emojis | Product Hunt" width="250" height="54" /></a>
     </div>
     </div>
     </Fade>
