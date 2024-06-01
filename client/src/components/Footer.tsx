@@ -23,7 +23,7 @@ export default function Footer() {
             TabRizz.
           </h2>
 
-          <div className='flex items-start justify-end mt-10 gap-20'>
+          <div className='flex items-start justify-end mt-10 gap-20 max-md:justify-normal'>
             <div>
               <h3 className='text-2xl font-semibold leading-6 hover:text-yellow-500 text-white'>App</h3>
               <ul role='list' className='mt-6 space-y-4'>
