@@ -14,6 +14,7 @@ cd client
 npm install
 npm run start
 ```
+Go to `client/src/utils/common.ts` and update `backendUrl` to localhost of server
 
 For the server, you need to create an account on Firebase
 ( There is no Firestore test simulator right now 🥲)

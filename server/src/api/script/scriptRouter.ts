@@ -9,7 +9,7 @@ export const scriptRouter: Router = (() => {
   router.get('/', (_req, res) => {
     const scriptTemplate = `
 
-    function get(url='') {
+    function post(url='') {
         const tabrizData = localStorage.getItem('tabrizzData');
         if(tabrizData){
             const parsedData = JSON.parse(tabrizData);
@@ -19,10 +19,12 @@ export const scriptRouter: Router = (() => {
         }
 
         }
-        return fetch(url)
+        return fetch(url,{
+            method: 'POST',
+        })
             .then(response => response.json())
             .catch(error => {
-                console.error('Error:', error)
+                console.error('Error:', error);
                 throw error;   
             });
     }
@@ -43,7 +45,7 @@ export const scriptRouter: Router = (() => {
 
     // const url = \`https://backend.tabrizz.com/users/get-script-data/\${dataId}\`;
 
-    get(url,{id:dataId}).then(data => {
+    post(url,{id:dataId}).then(data => {
         const {listOfEmojis,intervalTime:changeIconSeconds,localStorageData} = data;
         if(!localStorageData){
             const localstorageData = {listOfEmojis:listOfEmojis,intervalTime:changeIconSeconds,expires:Date.now() + 1000 * 60 * 60 * 24 } // 24 hours

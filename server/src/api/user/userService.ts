@@ -45,4 +45,29 @@ export const userServices = {
       throw new Error('Error in getting user data');
     }
   },
+
+  getUserDataAndUpdate: async (id: string) => {
+    try {
+      console.log(`Getting user data and update for id: ${id}`);
+      const userDataDoc = await db.collection('userData').doc(id);
+      const doc = await userDataDoc.get();
+      
+      let counter = 1;
+      if(doc.data()?.counter){
+        counter = doc.data()?.counter + 1;
+      }
+      await userDataDoc.update({ lastAccessed: new Date(),counter: counter});
+
+      if (!doc.exists) {
+        console.log('No such document!');
+        return {dataFound:false}
+      } else {
+        // console.log('Document data:', doc.data());
+        return doc.data();
+      }
+    } catch (e) {
+      console.log(`Error in getting user data: ${e} ${JSON.stringify(e)}`);
+      throw new Error('Error in getting user data');
+    }
+  },
 };

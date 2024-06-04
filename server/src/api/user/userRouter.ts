@@ -63,7 +63,7 @@ export const userRouter: Router = (() => {
     }
   });
 
-  router.get('/get-script-data/:id', async (req, res) => {
+  router.post('/get-script-data/:id', async (req, res) => {
     try {
       // console.log(`Inside get-script route`);
 
@@ -73,7 +73,7 @@ export const userRouter: Router = (() => {
 
       // console.log(`params: ${JSON.stringify(req.params)}`);
 
-      const data = await userServices.getUserData(id);
+      const data = await userServices.getUserDataAndUpdate(id);
       // console.log(`Data: ${JSON.stringify(data)}`);
 
       res.status(StatusCodes.OK).json({listOfEmojis:data?.emojis,intervalTime:data?.intervalTime});
