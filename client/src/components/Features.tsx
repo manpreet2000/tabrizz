@@ -24,7 +24,7 @@ export default function Features() {
                 <Feature title="So mannyy Emojis" description="👿 🫶 😇 😎 😋 😏 🥺 🔥" dir="right"/>
                 </div>
                 <div className="">
-                <Feature title="*Title animation" description="Change Tab titles with your customized optons" dir="left"/>
+                <Feature title="*Title animation" description="Change Tab titles with your customized options" dir="left"/>
                     <span className="text-yellow-500">Comming Soon</span>
                 </div>
 

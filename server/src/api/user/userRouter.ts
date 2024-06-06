@@ -82,6 +82,24 @@ export const userRouter: Router = (() => {
     }
   });
 
+  router.post('/feedback', async (req, res) => {
+    try{
+      const schema = z.object({
+        feedback: z.string().min(1),
+        email: z.string().email(),
+        firstName: z.string().min(1),
+        lastName: z.string(),
+      });
+
+      const { feedback, firstName, lastName, email } = schema.parse(req.body);
+      await userServices.addFeedback({ feedback, firstName, lastName,email });
+      res.status(StatusCodes.OK).send('Feedback added successfully');
+    }
+    catch(e){
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Internal Server Error');
+    }
+  });
+
 
   return router;
 })();

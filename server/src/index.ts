@@ -1,5 +1,4 @@
 import { env } from "./config";
-import { StatusCodes } from 'http-status-codes';
 import { app } from "./server";
 
 console.log(env.GOOGLE_APPLICATION_CREDENTIALS);

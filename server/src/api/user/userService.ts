@@ -70,4 +70,30 @@ export const userServices = {
       throw new Error('Error in getting user data');
     }
   },
+
+  addFeedback: async ({ feedback, email, firstName, lastName }: { feedback: string; email: string; firstName: string; lastName: string }) => {
+    try{
+      
+      const uuid: string = uuidv4();
+      const data = {
+        feedback,
+        email,
+        firstName,
+        lastName,
+        id:uuid,
+      };
+      console.log(`Adding feedback: ${JSON.stringify(data)}`);
+      
+      const docRef = await db
+        .collection('feedback')
+        .doc(uuid)
+        .set({ feedback: data.feedback, email: data.email, firstName: data.firstName, lastName: data.lastName, id: data.id });
+      console.log('Document written with ID: ', docRef);
+      return uuid;
+    }
+    catch(e){
+      console.log(`Error in adding feedback: ${e} ${JSON.stringify(e)}`);
+      throw new Error('Error in adding feedback');
+    }
+  }
 };

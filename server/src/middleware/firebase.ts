@@ -30,7 +30,8 @@ export const firebaseAuth: RequestHandler = async (req, res, next) => {
           
         if (
             req.path.startsWith('/script.js') ||
-            req.path.startsWith('/users/get-script-data')
+            req.path.startsWith('/users/get-script-data') ||
+            req.path.startsWith('/users/feedback')
           ){
             next();
             return;
